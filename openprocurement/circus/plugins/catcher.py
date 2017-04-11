@@ -8,7 +8,7 @@ class Catcher(BaseObserver):
     def __init__(self, *args, **config):
         super(Catcher, self).__init__(*args, **config)
         self.watcher = config.get("watcher", None)
-        self.procesess_count = (cpu_count() * config.get("multiplier", 1))
+        self.procesess_count = int(cpu_count() * float(config.get("multiplier", 1)))
 
         if self.watcher is None:
             self.statsd.stop()
