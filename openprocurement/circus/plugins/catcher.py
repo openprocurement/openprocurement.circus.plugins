@@ -1,5 +1,5 @@
-from circus.plugins.statsd import BaseObserver
 from multiprocessing import cpu_count
+from circus.plugins.statsd import BaseObserver
 
 
 class Catcher(BaseObserver):

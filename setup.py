@@ -10,8 +10,8 @@ setup(name='openprocurement.circus.plugins',
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
-        "Programming Language :: Python",
-        ],
+                  "Programming Language :: Python",
+      ],
       keywords="web services",
       author='Quintagroup, Ltd.',
       author_email='info@quintagroup.com',

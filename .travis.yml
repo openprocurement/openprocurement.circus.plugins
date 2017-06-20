@@ -2,17 +2,16 @@ language: python
 sudo: false
 python:
   - "2.7"
-services:
-  - couchdb
 cache:
   directories:
     - eggs
+before_install:
+  - pip install pep8
 env:
   - TZ=Europe/Kiev
-notifications:
-  webhooks:
-    urls:
-      - https://webhooks.gitter.im/e/15e2534ac51757c92e72
-    on_success: always
-    on_failure: always
-    on_start: false
+script:
+    # Run pep8 on all .py files in all subfolders
+    # (I ignore "E402: module level import not at top of file"
+    # because of use case sys.path.append('..'); import <module>)
+    - find . -name \*.py -exec pep8 --ignore=E501 {} +
+
